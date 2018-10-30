@@ -2,7 +2,11 @@ from flask_restful import Resource, reqparse
 
 from werkzeug.security import safe_str_cmp
 
-from flask_jwt_extended import jwt_required, create_access_token, create_refresh_token, get_jwt_identity
+from flask_jwt_extended import (jwt_required,
+                                create_access_token,
+                                create_refresh_token,
+                                get_jwt_identity,
+                                jwt_refresh_token_required)
 
 from models.credentials import Credentials
 
@@ -113,7 +117,15 @@ class EmployeeLogin(Resource):
 
         return {'message': 'Invalid credentials'}, 401
 
-        # FIXME: if attacker can steal token, will attacker know which endpoint to use the token on?
+        # FIXME: if token is stolen, can attacker know which endpoint to use the token on?
+
+
+class TokenRefresh(Resource):
+    @jwt_refresh_token_required
+    def post(self):
+        current_user = get_jwt_identity()
+        new_token = create_access_token(identity=current_user, fresh=False)
+        return {'access_token': new_token}, 200
 
 
 class EmployeeDirectory(Resource):
@@ -207,7 +219,6 @@ class Employee(Resource):
 
         elif user['employee_type'] == 'manager' or user['user_name'] == name:
             return {'Employee': employee}, 200
-
 
     @jwt_required
     def put(self, name):
