@@ -1,20 +1,8 @@
 [
     {
-        "employee_type": "{manager}",
-        "user_name": "the_boss",
-        "real_name": "Don Corleone",
-        "phone_number": "7"
-    },
-    {
         "employee_type": "manager",
         "user_name": "larry",
-        "real_name": "parker",
-        "phone_number": "99999999"
-    },
-    {
-        "employee_type": "manager",
-        "user_name": "Chen",
-        "real_name": "Hayie",
+        "real_name": "Don Corleone",
         "phone_number": "99999999"
     }
 ]
