@@ -11,3 +11,4 @@ PyJWT==1.4.2
 pytz==2018.5
 six==1.11.0
 Werkzeug==0.14.1
+Sphinx==1.8.1
