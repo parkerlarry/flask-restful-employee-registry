@@ -14,7 +14,8 @@ app.config['JWT_BLACKLIST_ENABLED'] = True  # allow revocation of users / blackl
 
 app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']  # enable blacklisting of access and refresh tokens
 
-blacklist = [0, 1, 2]  # TODO: This is an example, but these user ids will be blacklisted.
+# TODO: look into how to logout users using JTI
+blacklist = [0, 1, 2]  # This is an example, but these user ids will be blacklisted.
 
 api = Api(app)
 
@@ -31,14 +32,6 @@ def revoked_token_callback():
     return jsonify({
         'description': 'The token has been revoked.',
         'error': 'token_revoked'
-    }), 401
-
-
-@jwt.expired_token_loader  # callback for when token has expired after 5 mins
-def expired_token_callback():
-    return jsonify({
-        'description': 'The token has expired. Please refresh! ',
-        'error': 'token_expired'
     }), 401
 
 
@@ -66,6 +59,14 @@ def missing_token_callback():
     }), 401
 
 
+@jwt.expired_token_loader  # callback for when token has expired after 5 mins
+def expired_token_callback():
+    return jsonify({
+        'description': 'The token has expired. Please refresh! ',
+        'error': 'token_expired'
+    }), 401
+
+
 api.add_resource(EmployeeLogin, '/login')  # login endpoint for handling existing (registered) employees
 
 api.add_resource(EmployeeDirectory, '/employees')  # employee resource endpoint for all employees
@@ -76,4 +77,4 @@ api.add_resource(RegisterEmployee, '/employee')  # employee resource endpoint fo
 
 api.add_resource(TokenRefresh, '/refresh')
 
-#app.run(port=5000, debug=True)
+# app.run(port=5000, debug=True)
