@@ -12,7 +12,7 @@ from models.credentials import Credentials
 
 from models.employees import Employees
 
-import uuid
+import uuid  # each employee gets a unique id
 
 _employee_db = 'database/employees.json'  # filename to use for employee database
 
@@ -95,6 +95,14 @@ _member_parser.add_argument('password',
                             )
 
 
+class TokenRefresh(Resource):
+    @jwt_refresh_token_required
+    def post(self):
+        current_user = get_jwt_identity()
+        new_token = create_access_token(identity=current_user, fresh=False)
+        return {'access_token': new_token}, 200
+
+
 class EmployeeLogin(Resource):
 
     @classmethod
@@ -117,15 +125,7 @@ class EmployeeLogin(Resource):
 
         return {'message': 'Invalid credentials'}, 401
 
-        # FIXME: if token is stolen, can attacker know which endpoint to use the token on?
-
-
-class TokenRefresh(Resource):
-    @jwt_refresh_token_required
-    def post(self):
-        current_user = get_jwt_identity()
-        new_token = create_access_token(identity=current_user, fresh=False)
-        return {'access_token': new_token}, 200
+        # FIXME: find out if token is stolen, can attacker know which endpoint to use the token on?
 
 
 class EmployeeDirectory(Resource):
