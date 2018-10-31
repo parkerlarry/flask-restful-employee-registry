@@ -14,6 +14,8 @@ app.config['JWT_BLACKLIST_ENABLED'] = True  # allow revocation of users / blackl
 
 app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']  # enable blacklisting of access and refresh tokens
 
+app.config['PROPAGATE_EXCEPTIONS'] = True  # allow the expired_token_loader to take effect
+
 # TODO: look into how to logout users using JTI
 blacklist = [0, 1, 2]  # This is an example, but these user ids will be blacklisted.
 
