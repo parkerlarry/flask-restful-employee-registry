@@ -1,6 +1,6 @@
-#Employee Registry Api
+# Employee Registry Api
 
-##Introduction
+## Introduction
 
 This project is about a server-side API developed in Python with the Flask framework, and its extension Flask Resful.
 The server-side API is currently not served served by database engine, but instead, a flat file database. 
@@ -19,7 +19,7 @@ This project is developed solely for tesing purposes, monkey test and penetratio
 
 The goal of the project is purely educational, as it is to observe the common vulnerabilities and pitfalls to beware of during backend development. Future releases will include different database engines.
 
-##How to install and interact with API
+## How to install and interact with API
 
 You would need python version X to contribute to this code. The API is hard coded to run on port XYZ1. There are two different ways of installing the dependencies explained below.
 
