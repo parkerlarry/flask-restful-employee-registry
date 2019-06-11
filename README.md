@@ -32,3 +32,11 @@ Project dependencies will also be listed in the docker-compose.yml and Dockerfil
 The command below will then build the docker image, and run the docker container.
 
 `docker-compose -f docker-compose.yml up --build -d`
+
+## How to test
+
+### Postman
+
+### Pytest
+
+## How to deploy
