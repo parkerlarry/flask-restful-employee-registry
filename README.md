@@ -3,7 +3,7 @@
 ## Introduction
 
 This project is about a server-side API developed in Python with the Flask framework, and its extension Flask Resful.
-The server-side API is currently not served served by database engine, but instead, a flat file database. 
+API is currently not served by database engine, but instead, a flat file database. Authentication and authorization is enforced by JWT in accordance to the role of an employee.
 
 The user interacts with the api by sending http requests to the server, upon which the corresponding CRUD operations detailed below are performed:
 
