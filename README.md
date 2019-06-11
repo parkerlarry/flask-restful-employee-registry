@@ -39,4 +39,19 @@ The command below will then build the docker image, and run the docker container
 
 ### Pytest
 
-## How to deploy
+
+## How to contribute
+
+### Branching
+
+#### Master
+
+#### Develop
+
+  ##### Feature-branches
+  The current convention for branch name is <GRP | DLT>-X, where X is the feature id genereated by the card.
+
+
+### Code review
+
+### Devops
