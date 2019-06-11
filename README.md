@@ -17,7 +17,7 @@ Delete the employee reffered to by an ID.
 
 This project is developed solely for tesing purposes, monkey test and penetration tests among others. Once a feature is added different vulnerabilities and issues will be tested and reported, prior to merge on the development branch.
 
-The goal of the project is purely educational, as it is to observe the common vulnerabilities and pitfalls to beware of during backend development. Future releases will include different database engines.
+The goal of the project is purely educational, as it is to observe the common vulnerabilities and pitfalls to beware of during backend development. Future releases will include different database engines and vulnerability fixes.
 
 ## How to install and interact with API
 
