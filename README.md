@@ -1,6 +1,6 @@
 # Employee Registry Api
 
-## Introduction
+## Description
 
 This project is about a server-side API developed in Python with the Flask framework, and its extension Flask Resful.
 API is currently not served by database engine, but instead, a flat file database. Authentication and authorization is enforced by JWT in accordance to the role of an employee.
@@ -52,6 +52,10 @@ The command below will then build the docker image, and run the docker container
   The current convention for branch name is <GRP | DLT>-X, where X is the feature id genereated by the card.
 
 
-### Code review
+### Pull request baseed code review
 
 ### Devops
+
+### Licensing
+
+### Contact details
