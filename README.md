@@ -56,6 +56,6 @@ The command below will then build the docker image, and run the docker container
 
 ### Devops
 
-### Licensing
+## Licensing
 
-### Contact details
+## Contact details for further help
