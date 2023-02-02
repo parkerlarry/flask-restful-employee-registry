@@ -10,5 +10,5 @@ MarkupSafe==1.0
 PyJWT==1.4.2
 pytz==2018.5
 six==1.11.0
-Werkzeug==0.15.3
+Werkzeug==0.15.5
 Sphinx==1.8.1
